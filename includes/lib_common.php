@@ -99,7 +99,7 @@ function is_email($user_email)
 function is_mobile_phone ($mobile_phone)
 {
 	
-	$chars = "/^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|18[0-9]{1}[0-9]{8}$|17[0-9]{1}[0-9]{8}$/";
+	$chars = "/^1[0-9]{10}$/";
 	if(preg_match($chars, $mobile_phone))
 	{
 		return true;
