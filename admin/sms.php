@@ -87,11 +87,9 @@ if (isset($_POST['submit'])) {
         file_put_contents($file, "");
         $config_str = "<?php";
         $config_str .= "\n\n";
-        $config_str .= '$hy_appkey = "' . $_POST['hy_appkey'] . '";';
+        $config_str .= '$hy_appkey = "' . trim($_POST['hy_appkey']) . '";';
         $config_str .= "\n\n";
-        $config_str .= '$hy_secretkey = "' . $_POST['hy_secretkey'] . '";';
-        $config_str .= "\n\n";
-        $config_str .= '$hy_sign = "' . $_POST['hy_sign'] . '";';
+        $config_str .= '$hy_secretkey = "' . trim($_POST['hy_secretkey']) . '";';
 
         $config_str .= "\n\n";
         $config_str .= '$hy_showbug = "' . $_POST['hy_showbug'] . '";';
@@ -99,7 +97,7 @@ if (isset($_POST['submit'])) {
         $config_str .= "\n\n";
         $config_str .= '$mobile_virtual = "' . $_POST['mobile_virtual'] . '";';
         $config_str .= "\n";
-        $config_str .= '$mobile_virtual_template = "' . $_POST['mobile_virtual_template'] . '";';
+        $config_str .= '$mobile_virtual_template = "' . trim($_POST['mobile_virtual_template']) . '";';
 
         $config_str .= "\n\n";
         $config_str .= "?>";
