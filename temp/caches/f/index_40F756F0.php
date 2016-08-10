@@ -9,10 +9,10 @@
 <meta name="Description" content="鸿宇多用户商城" />
 <meta name="renderer" content="webkit" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<title>鸿宇多用户商城  </title>
+<title>鸿宇多用户商城</title>
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link rel="alternate" type="application/rss+xml" title="RSS|鸿宇多用户商城  " href="feed.php" />
+<link rel="alternate" type="application/rss+xml" title="RSS|鸿宇多用户商城" href="feed.php" />
 <link rel="stylesheet" href="themes/68ecshopcom_360buy/css/index.css" />
 <link rel="stylesheet" type="text/css" href="themes/68ecshopcom_360buy/css/68ecshop_commin.css" />
 <script type="text/javascript" src="themes/68ecshopcom_360buy/js/jquery-1.6.2.min.js"></script>

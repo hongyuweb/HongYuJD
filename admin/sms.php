@@ -48,7 +48,7 @@ error_reporting(0);
             <p>　App Key&nbsp;：<input type="text" id="appkey" name="hy_appkey" value='<?php echo $hy_appkey ?>'/>
             <p>App Secret：<input type="text" id="secretkey" name="hy_secretkey" style="width: 228px;" value='<?php echo $hy_secretkey ?>'/><p>
             <p style="color: #808080;">　特别注意：① 阿里大鱼短信环境必须是：PHP5.3　MySQL5.1/5.5</p>
-            <p style="color: #808080;">　　　　　　② 请前往<a href="shop_config.php?act=list_edit" style="margin: 0 5px;">填写短信模板</a>或 前往：系统设置 -> 商店设置 -> 短信设置 进行操作。</p>
+            <p style="color: #808080;">　　　　　　② 请前往：系统设置 -> 商店设置 -> 短信设置 填写短信模板ID和短信签名（请从阿里大鱼->配置管理中获取模板ID和短信签名）。</p>
             <p style="color: #808080;">　　　　　　③ 如需技术支持请联系：鸿宇科技 & Shadow QQ:1527200768</p>
             <p style="color: #808080;">　　　　　　④ 点击查看<a href="http://bbs.hongyuvip.com/?/article/125" target="_blank" style="margin: 0 5px;">鸿宇版阿里大鱼短信使用教程</a></p>
         </div>
