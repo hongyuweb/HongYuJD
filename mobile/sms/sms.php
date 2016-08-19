@@ -229,7 +229,11 @@ function sendSMS($mobile_phone, $content)
     } else {
        if($hy_showbug == true){
            $hy_result = $resp->sub_msg;
-           echo "发送失败：【" . $hy_result . "】";
+           if(empty($hy_result)){
+               echo "短信验证码发送失败！请检查：\n鸿宇管理中心->短信管理->App Key、App Secret\n商店设置->短信设置->短信签名、对应的模板编号\n阿里开发者控制台->安全中心->IP白名单是否正确？";
+           }else{
+               echo "发送失败：【" . $hy_result . "】";
+           }
            exit;
        }
         return false;
