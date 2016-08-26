@@ -4,7 +4,7 @@
  * 鸿宇多用户商城 商品详情
  * ============================================================================
  * 版权所有 2015-2016 鸿宇科技有限公司，并保留所有权利。
- * 网站地址: http://www.hongyuvip.com；
+ * 网站地址: http://bbs.hongyuvip.com；
  * ----------------------------------------------------------------------------
  * 仅供学习交流使用，如需商用请购买正版版权。鸿宇不承担任何法律责任。
  * 踏踏实实做事，堂堂正正做人。
@@ -16,9 +16,9 @@
 define('IN_ECS', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
-/* 代码增加 by www.hongyuvip.com strat */
+/* 代码增加 by bbs.hongyuvip.com strat */
 require(dirname(__FILE__) . '/includes/lib_comment.php');
-/* 代码增加 by www.hongyuvip.com end */
+/* 代码增加 by bbs.hongyuvip.com end */
 if ((DEBUG_MODE & 2) != 2)
 {
     $smarty->caching = true;
@@ -26,7 +26,7 @@ if ((DEBUG_MODE & 2) != 2)
 
 $affiliate = unserialize($GLOBALS['_CFG']['affiliate']);
 $smarty->assign('affiliate', $affiliate);
-/* 代码增加_start   By www.hongyuvip.com */
+/* 代码增加_start   By bbs.hongyuvip.com */
 
 if(!empty($_REQUEST['act']) && $_REQUEST['act'] == 'get_pickup_info')
 {
@@ -66,7 +66,7 @@ elseif (!empty($_REQUEST['act']) && $_REQUEST['act'] == 'get_pickup_point_list')
 	$pickup_point_list = $GLOBALS['db']->getAll($sql);
 	die(json_encode($pickup_point_list));
 }
-/* 代码增加_end   By www.hongyuvip.com */
+/* 代码增加_end   By bbs.hongyuvip.com */
 /*------------------------------------------------------ */
 //-- INPUT
 /*------------------------------------------------------ */
@@ -74,7 +74,7 @@ elseif (!empty($_REQUEST['act']) && $_REQUEST['act'] == 'get_pickup_point_list')
 $goods_id = isset($_REQUEST['id'])  ? intval($_REQUEST['id']) : 0;
 
 
-/* 代码增加_start  By  www.hongyuvip.com */
+/* 代码增加_start  By  bbs.hongyuvip.com */
 $path_name = isset($_REQUEST['path_name'])  ? trim($_REQUEST['path_name']) : '';
 if($path_name)
 {
@@ -86,10 +86,10 @@ if($path_name)
 		exit;
 	}
 }
-/* 代码增加_end  By  www.hongyuvip.com */
+/* 代码增加_end  By  bbs.hongyuvip.com */
 
 
-/* 代码增加_start By  www.hongyuvip.com */
+/* 代码增加_start By  bbs.hongyuvip.com */
 $sql_attr_www_ecshop68_com="SELECT a.attr_id, ga.goods_attr_id FROM ". $GLOBALS['ecs']->table('attribute') . " AS a left join ". $GLOBALS['ecs']->table('goods_attr') . "  AS ga on a.attr_id=ga.attr_id  WHERE a.is_attr_gallery=1 and ga.goods_id='" . $goods_id. "' order by ga.goods_attr_id ";
 $goods_attr=$GLOBALS['db']->getRow($sql_attr_www_ecshop68_com);
 if($goods_attr){
@@ -142,7 +142,7 @@ $row = get_products_info($goods_id,explode(",",$spce_id));
 die($json->encode($row));
 
 }
-/* 代码增加_end By  www.hongyuvip.com */
+/* 代码增加_end By  bbs.hongyuvip.com */
 
 /*------------------------------------------------------ */
 //-- 改变属性、数量时重新计算商品价格
@@ -366,7 +366,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
     $smarty->assign('cfg',          $_CFG);
     $smarty->assign('promotion',       get_promotion_info($goods_id));//促销信息
     //$smarty->assign('promotion_info', get_promotion_info());
-/* 代码增加_start   By www.hongyuvip.com */
+/* 代码增加_start   By bbs.hongyuvip.com */
 	$smarty->assign('shop_country',   $_CFG['shop_country']);
 	$sql = 'select region_id, region_name from ' . $ecs->table('region') . ' where parent_id=' . $_CFG['shop_country'];
 	$country_list = $GLOBALS['db']->getAll($sql);
@@ -375,7 +375,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
 	$smarty->assign('city_id',        $city_id);
 	$district_id = $db->getOne('select region_id from ' . $ecs->table('region') . ' where parent_id=' . $city_id);
 	$smarty->assign('district_id',    $district_id);
-/* 代码增加_end   By www.hongyuvip.com */
+/* 代码增加_end   By bbs.hongyuvip.com */
     /* 获得商品的信息 */
     $goods = get_goods_info($goods_id);
     
@@ -392,7 +392,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
             $goods['goods_brand_url'] = build_uri('brand', array('bid'=>$goods['brand_id']), $goods['goods_brand']);
         }
 
-		/* 代码增加_start  By  www.hongyuvip.com */
+		/* 代码增加_start  By  bbs.hongyuvip.com */
 		$goods['supplier_name'] ="网站自营";
 		 if ($goods['supplier_id'] > 0)
          {
@@ -402,7 +402,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
 			 $goods['supplier_name']= $shopuserinfo['supplier_name'];
 			 get_dianpu_baseinfo($goods['supplier_id'],$shopuserinfo);
 		 }
-		/* 代码增加_end  By  www.hongyuvip.com */
+		/* 代码增加_end  By  bbs.hongyuvip.com */
 
         $shop_price   = $goods['shop_price'];
         $linked_goods = get_linked_goods($goods_id);
@@ -502,7 +502,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
         $smarty->assign('properties',          $properties['pro']);                              // 商品属性
 
 
-		/* 代码增加_start  By  www.hongyuvip.com */
+		/* 代码增加_start  By  bbs.hongyuvip.com */
 		$sql_zhyh_qq = "select attr_id from ".$ecs->table('attribute')." where cat_id='". $goods['goods_type'] ."' and is_attr_gallery='1' ";
 		$attr_id_gallery = $db->getOne($sql_zhyh_qq);
 		
@@ -560,7 +560,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
 		}
 		$smarty->assign('is_goods_page', 1);
 
-		/* 代码增加_end  By  www.hongyuvip.com */
+		/* 代码增加_end  By  bbs.hongyuvip.com */
 
 		$smarty->assign('promotion',       get_promotion_info($goods_id,$goods['supplier_id']));//促销信息
         $smarty->assign('specification',       $properties['spe']);                              // 商品规格
@@ -570,8 +570,8 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
         $smarty->assign('fittings',            get_goods_fittings(array($goods_id)));                   // 配件
         $smarty->assign('rank_prices',         get_user_rank_prices($goods_id, $shop_price));    // 会员等级价格
         
-		$smarty->assign('pictures',            get_goods_gallery_attr_www_ecshop68_com($goods_id, $goods_attr_id)); // 商品相册_修改 By www.hongyuvip.com
-		$smarty->assign('new_goods',           get_recommend_goods('new'));     // 最新商品  改 By www.hongyuvip.com
+		$smarty->assign('pictures',            get_goods_gallery_attr_www_ecshop68_com($goods_id, $goods_attr_id)); // 商品相册_修改 By bbs.hongyuvip.com
+		$smarty->assign('new_goods',           get_recommend_goods('new'));     // 最新商品  改 By bbs.hongyuvip.com
         $smarty->assign('bought_goods',        get_also_bought($goods_id));                      // 购买了该商品的用户还购买了哪些商品
         $smarty->assign('goods_rank',          get_goods_rank($goods_id));                       // 商品的销售排名
 		$smarty->assign('best_goods',          get_recommend_goods('best',$goods['supplier_id']));     				 // 最新商品
@@ -610,10 +610,10 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
         //获取关联礼包
         $package_goods_list = get_package_goods_list($goods['goods_id']);
         $smarty->assign('package_goods_list',$package_goods_list);    // 获取关联礼包
-		/* 代码增加_start By www.hongyuvip.com */
+		/* 代码增加_start By bbs.hongyuvip.com */
 		$package_goods_list_120 = get_package_goods_list_120($goods['goods_id']);
         $smarty->assign('package_goods_list_120',$package_goods_list_120);    // 获取关联礼包
-		/* 代码增加_end By www.hongyuvip.com */
+		/* 代码增加_end By bbs.hongyuvip.com */
 
         assign_dynamic('goods');
         $volume_price_list = get_volume_price_list($goods['goods_id'], '1');
@@ -621,7 +621,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
 		
 		
 		
-		//评价晒单 增加 by www.hongyuvip.com
+		//评价晒单 增加 by bbs.hongyuvip.com
 		$rank_num['rank_a'] = $db->getOne("SELECT COUNT(*) AS num FROM ".$ecs->table('comment')." WHERE id_value = '$goods_id' AND status = 1 AND comment_rank in (5,4)");
 		$rank_num['rank_b'] = $db->getOne("SELECT COUNT(*) AS num FROM ".$ecs->table('comment')." WHERE id_value = '$goods_id' AND status = 1 AND comment_rank in (3,2)");
 		$rank_num['rank_c'] = $db->getOne("SELECT COUNT(*) AS num FROM ".$ecs->table('comment')." WHERE id_value = '$goods_id' AND status = 1 AND comment_rank = 1");
@@ -1098,7 +1098,7 @@ function get_dianpu_baseinfo($suppid=0,$suppinfo){
 	//代码增加 
     $suppid = (intval($suppid)>0) ? intval($suppid) : intval($_GET['suppId']);
 }
-/* 代码增加_start By www.hongyuvip.com */
+/* 代码增加_start By bbs.hongyuvip.com */
 /**
  * 获得指定商品的相册
  *
@@ -1136,7 +1136,7 @@ function get_goods_gallery_attr_www_ecshop68_com($goods_id, $goods_attr_id)
     return array_values($ret);
 }
 
-/* 代码增加_end By www.hongyuvip.com */
+/* 代码增加_end By bbs.hongyuvip.com */
 
 /**
  * 获取相关属性的库存
@@ -1213,7 +1213,7 @@ function get_goods_attr_value($goodsid,$name='goods_sn,goods_name')
 	$row = $GLOBALS['db']->getRow($sql);
 	return $row;
 }
-/* 代码增加_start  By www.hongyuvip.com */
+/* 代码增加_start  By bbs.hongyuvip.com */
 function get_package_goods_list_120($goods_id)
 {
 	$now = gmtime();
@@ -1342,7 +1342,7 @@ function get_mark_price($goods_id)
 }
 
 
-/* 代码增加_start  By www.hongyuvip.com */
+/* 代码增加_start  By bbs.hongyuvip.com */
 /*
  *
  *查询商品的优惠数量和价格 
@@ -1368,7 +1368,7 @@ function get_goods_volume($goods_id)
 }
 
 
-/* 代码增加_start  By  www.hongyuvip.com */
+/* 代码增加_start  By  bbs.hongyuvip.com */
 make_html();
-/* 代码增加_end   By  www.hongyuvip.com */
+/* 代码增加_end   By  bbs.hongyuvip.com */
 ?>

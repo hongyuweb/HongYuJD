@@ -275,7 +275,7 @@ $(document).ready(function(){
                   <!-- {* 判断属性是复选还是单选 *} --> 
                   <!-- {if $spec.attr_type eq 1} --> 
                   <!-- {if $cfg.goodsattr_style eq 1} --> 
-                  <!--代码修改_start  By www.hongyuvip.com 注：将 if $cfg.goodsattr_style eq 1 与 对应else 之间的代码修改成下面这个样子-->
+                  <!--代码修改_start  By bbs.hongyuvip.com 注：将 if $cfg.goodsattr_style eq 1 与 对应else 之间的代码修改成下面这个样子-->
                   <input type="hidden" name="spec_attr_type" value="{$spec_key}">
                   <input type="hidden" name="attr_types" id="spec_attr_type_{$spec_key}" value="0">
                   <ul class="ys_xuan" id="xuan_{$spec_key}">
@@ -294,7 +294,7 @@ $(document).ready(function(){
                   </ul>
                   <div class="clear"></div>
                   <input type="hidden" name="spec_list" value="{$key}" />
-                  <!--代码修改_end  By www.hongyuvip.com-->
+                  <!--代码修改_end  By bbs.hongyuvip.com-->
                   <!-- {else} -->
                   <select name="spec_{$spec_key}">
                     <!-- {foreach from=$spec.values item=value key=key} -->
@@ -315,7 +315,7 @@ $(document).ready(function(){
                 </div>
               </li>
               <!-- {/foreach} --> 
-              <!--代码修改_start  By www.hongyuvip.com-->
+              <!--代码修改_start  By bbs.hongyuvip.com-->
               <script type="text/javascript">
 var myString=new Array();
 {literal}
@@ -324,7 +324,7 @@ myString[{$pkey}]="{$prod}";
 {/foreach}
 {/literal}
 </script> 
-              <!--代码修改_end  By www.hongyuvip.com-->
+              <!--代码修改_end  By bbs.hongyuvip.com-->
               <!-- {* 结束循环可选属性 *} -->
               <li id="choose-amount">
                 <div class="dt">数量：</div>

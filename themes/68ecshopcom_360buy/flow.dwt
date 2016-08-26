@@ -84,10 +84,10 @@
   <!-- cart-inner结束 -->
   <form id="formCart" name="formCart" method="post" action="flow.php">
     <table width="100%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#ffffff" style=" border:#DDDDDD 1px solid; border-top:#999999 2px solid;">
-      <tr> {* 代码增加_start  By  www.hongyuvip.com *}
+      <tr> {* 代码增加_start  By  bbs.hongyuvip.com *}
         <th bgcolor="#F7F7F7" width="6%" align=center><input type="checkbox" autocomplete="off" id="chkAll" name="chkAll" onclick="return chkAll_onclick()" style="vertical-align:middle">
           全选</th>
-        {* 代码增加_end  By  www.hongyuvip.com *}
+        {* 代码增加_end  By  bbs.hongyuvip.com *}
         <th bgcolor="#F7F7F7">{$lang.goods_name}</th>
         <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
         <th bgcolor="#F7F7F7">{$lang.goods_attr}</th>
@@ -100,16 +100,16 @@
         <th bgcolor="#F7F7F7">{$lang.subtotal}</th>
         <th bgcolor="#F7F7F7">{$lang.handle}</th>
       </tr>
-      {* 代码修改_start  By  www.hongyuvip.com *}
+      {* 代码修改_start  By  bbs.hongyuvip.com *}
       <!-- {foreach from=$goods_list key=cartkey item=cartgoods} -->
       <tr>
         <td  colspan=20 style="border-top:2px solid #6699cc; background:#edf7ff;font-weight:bold;"> {$cartgoods.supplier_name} </td>
       </tr>
       <!-- {foreach from=$cartgoods.goods_list item=goods} --> 
-      {* 代码修改_end  By  www.hongyuvip.com *}
-      <tr> {* 代码增加_start  By  www.hongyuvip.com *}
+      {* 代码修改_end  By  bbs.hongyuvip.com *}
+      <tr> {* 代码增加_start  By  bbs.hongyuvip.com *}
         <td bgcolor="#FFFDEE" align="center" ><input type="checkbox" autocomplete="off" name="sel_cartgoods[]" value="{$goods.rec_id}" id="sel_cartgoods_{$goods.rec_id}" checked=checked onclick="select_cart_goods();"></td>
-        {* 代码增加_end  By  www.hongyuvip.com *}
+        {* 代码增加_end  By  bbs.hongyuvip.com *}
         <td bgcolor="#FFFDEE" align="center" style="width:40%"><!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 --> 
           <!-- {if $show_goods_thumb eq 1} --> 
           <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a> 
@@ -167,9 +167,9 @@
       
       <!-- {/foreach} --> 
       
-      {* 代码增加_start  By  www.hongyuvip.com *}
+      {* 代码增加_start  By  bbs.hongyuvip.com *}
       <!-- {/foreach} --> 
-      {* 代码增加_end  By  www.hongyuvip.com *}
+      {* 代码增加_end  By  bbs.hongyuvip.com *}
     </table>
     <input type="hidden" name="step" value="update_cart" />
     <input name="submit111" type="submit" value="{$lang.update_cart}" style="display:none;"  id="updatecart" />
@@ -182,7 +182,7 @@
       {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!-- {/if} --> 
     </div>
   </div>
-  {* 代码增加_start   By  www.hongyuvip.com *}
+  {* 代码增加_start   By  bbs.hongyuvip.com *}
   <script type="text/javascript" charset="utf-8">
 	function chkAll_onclick() 
 	{
@@ -244,7 +244,7 @@
 	    }
 	}
 	</script> 
-  {* 代码增加_End    By  www.hongyuvip.com *}
+  {* 代码增加_End    By  bbs.hongyuvip.com *}
   <div class="cart-button clearfix"> <a class="btn continue" href="index.php"  id="continue"><span class="btn-text" >继续购物</span></a> <a class="checkout" href="javascript:void(0);" onclick="return selcart_submit();"  id="toSettlement">去结算</a> </div>
   <?php
 $this->assign('hot_1',get_hot_cat_goods('promote',12)); //1：对应分类ID ;20：显示数量
@@ -677,9 +677,9 @@ data-widget="tab-item">
         </tr>
       </table>
     </div>
-    {* 代码增加_start  By  www.hongyuvip.com *}
+    {* 代码增加_start  By  bbs.hongyuvip.com *}
     <div id="supplier_shipping" class="w" style="line-height:25px;"> <!-- #BeginLibraryItem "/Library/order_supplier_shipping.lbi" --><!-- #EndLibraryItem --> </div>
-    {* 代码增加_end  By  www.hongyuvip.com *}
+    {* 代码增加_end  By  bbs.hongyuvip.com *}
     
     <!--{else}-->
     <input name = "shipping" type="radio" value = "-1" checked="checked"  style="display:none"/>
@@ -734,7 +734,7 @@ data-widget="tab-item">
         </tr>
         <!-- {foreach from=$payment_list item=payment name=name} --> 
         <!-- 循环支付方式 --> 
-        {* 代码修改_start  By  www.hongyuvip.com *}
+        {* 代码修改_start  By  bbs.hongyuvip.com *}
         {if $payment.pay_code eq 'alipay_bank'}
         <tr {if !$smarty.foreach.name.last}class="pay-tr"{/if}>
           <td bgcolor="#ffffff" colspan=2 style="padding-left:30px;"><input style="display:none;" type="radio" name="payment" id="alipay_bank" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/>
@@ -750,7 +750,7 @@ data-widget="tab-item">
           <td align="center" bgcolor="#ffffff" valign="center">{$payment.format_pay_fee}</td>
         </tr>
         {/if}
-        {* 代码修改_end  By  www.hongyuvip.com *}
+        {* 代码修改_end  By  bbs.hongyuvip.com *}
         <!-- {/foreach} 循环支付方式 -->
       </table>
     </div>

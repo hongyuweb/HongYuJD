@@ -5,7 +5,7 @@
  * User: Shadow
  * Date: 2016-05-18 0008
  * Time: 13:14
- * Http: www.hongyuvip.com
+ * Http: bbs.hongyuvip.com
  */
 header("content-Type: text/html; charset=Utf-8"); //设置字符的编码是utp-8
 if(file_exists('../data/install.lock') and file_exists('../mobile/data/install.lock')){

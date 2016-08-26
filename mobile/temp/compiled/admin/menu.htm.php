@@ -298,7 +298,7 @@ background-position:18px -493px;
    <li class="dropdown" id="14_school">
 
    <ul>
-        <li class="dropdown"><a href="http://www.hongyuvip.com/" target="_blank">官方网址</a></li>
+        <li class="dropdown"><a href="http://bbs.hongyuvip.com/" target="_blank">官方网址</a></li>
 
         <li class="dropdown"><a href="http://buy.hongyuvip.com/" target="_blank">鸿宇商城</a></li>
 
