@@ -12,9 +12,9 @@
  * $Author: Shadow & 鸿宇
  * $Id: common.php 17217 2016-01-19 06:29:08Z Shadow & 鸿宇
  */
-$_LANG['app_name'] = 'HongYu';
-$_LANG['cp_home'] = 'HongYu 管理中心';
-$_LANG['copyright'] = '版权所有 &copy; 2015-2016 鸿宇科技 hongyuvip.com ，并保留所有权利。';
+$_LANG['app_name'] = 'HongYuJD';
+$_LANG['cp_home'] = 'HongYuJD 管理中心';
+$_LANG['copyright'] = '版权所有 &copy; 2015-2016 鸿宇科技 bbs.hongyuvip.com ，并保留所有权利。';
 $_LANG['query_info'] = '共执行 %d 个查询，用时 %s 秒';
 $_LANG['memory_info'] = '，内存占用 %0.3f MB';
 $_LANG['gzip_enabled'] = '，Gzip 已启用';

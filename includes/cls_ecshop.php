@@ -18,7 +18,7 @@ if (!defined('IN_ECS'))
     die('Hacking attempt');
 }
 
-define('APPNAME', 'HongYu');
+define('APPNAME', 'HongYuJD');
 define('VERSION', 'v4_2');
 define('RELEASE', '20151206');
 define('PRODUCTNAME', 'xjd_dan');
