@@ -2457,6 +2457,7 @@ elseif ($_REQUEST['step'] == 'done')
 	        if (empty($bonus) || $bonus['user_id'] > 0 || $bonus['order_id'] > 0  || $now > $bonus['use_end_date'])
 	        {
 	        }
+            elseif(!empty($bonus['user_id']) && $bonus['user_id'] != $_SESSION[user_id]){}
 	        else
 	        {
 	            if ($user_id > 0)
@@ -2595,22 +2596,6 @@ elseif ($_REQUEST['step'] == 'done')
 	        else
 	        {
 	            $order['surplus'] = $order['order_amount'];
-				//是否开启余额变动给客户发短信-用户消费
-				if($_CFG['sms_user_money_change'] == 1)
-				{
-					$sql = "SELECT user_money,mobile_phone FROM " . $GLOBALS['ecs']->table('users') . " WHERE user_id = '" . $order['user_id'] . "'";
-					$users = $GLOBALS['db']->getRow($sql);
-                    //shadow
-                    $time = date('Y-m-d H:i:s');
-                    $order_amount = $order['order_amount'];
-                    $user_money = $users['user_money'];
-					$content = array($_CFG['sms_use_balance_reduce_tpl'],"{\"time\":\"$time\",\"order_amount\":\"$order_amount\",\"user_money\":\"$user_money\"}",$_CFG['sms_sign']);
-					if($users['mobile_phone'])
-					{
-						require_once (ROOT_PATH . 'sms/sms.php');
-						sendSMS($users['mobile_phone'],$content);
-					}
-				}
 	            $order['order_amount'] = 0;
 	        }
 	    }
@@ -2723,10 +2708,12 @@ elseif ($_REQUEST['step'] == 'done')
 
     	$cart_goods = $cart_goods_new[$ok]['goodlist'];
 
+    	if($cart_goods){
     	$id_ext_new = " AND rec_id in (". implode(',',array_keys($cart_goods)) .") ";
+	    }
 
     	//获取佣金id
-    	$order['rebate_id'] = get_order_rebate($ok);
+    	$order['rebate_id'] = 0;//get_order_rebate($ok);
 
     	//下单来源
 		$order['froms'] = WEB_FROM;
@@ -2804,7 +2791,7 @@ elseif ($_REQUEST['step'] == 'done')
 	    {
 	        use_bonus($order['bonus_id'], $new_order_id);
 	    }
-		if($order['bonus_id'] == '')
+		if($order['bonus_id'] == '' && (empty($bonus['user_id']) || $bonus['user_id'] == $_SESSION['user_id']))
 		{
 	        $order['bonus_id'] = $bonus['bonus_id'];
 			use_bonus($order['bonus_id'], $new_order_id);
@@ -2983,7 +2970,7 @@ elseif ($_REQUEST['step'] == 'done')
 		/* 插入支付日志 */
     	$order['log_id'] = insert_pay_log($order['order_sn'], $order['order_amount'], PAY_ORDER);
 	}else{
-//		$order['order_sn'] = $order['order_id'];
+		$order['order_sn'] = $order['order_id'];
 		/* 插入支付日志 */
     	//$order['log_id'] = insert_pay_log($order['order_id'], $order['order_amount'], PAY_ORDER);
 	}

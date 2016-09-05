@@ -9194,7 +9194,6 @@ INSERT INTO `ecs_shop_config` VALUES ('997', '10', 'company_type', 'textarea', '
 INSERT INTO `ecs_shop_config` VALUES ('998', '10', 'supplier_notice', 'textarea', '', '', '尊敬的供货商您好，由于系统升级，2014年5月18日13:00-16:00暂停营业，特此通知', '245');
 INSERT INTO `ecs_shop_config` VALUES ('999', '10', 'supplier_rebate_paytype', 'textarea', '', '', '支付宝转账\r\n银行转账\r\n微信支付\r\n财付通转账', '250');
 INSERT INTO `ecs_shop_config` VALUES ('150', '1', 'erweima_wapurl', 'text', '', '', 'http://localhost/mobile/goods.php?id={id}', '1');
-INSERT INTO `ecs_shop_config` VALUES ('161', '1', 'erweima_logo', 'file', '', '../images/', '', '1');
 INSERT INTO `ecs_shop_config` VALUES ('1000', '2', 'takegoods_send_email', 'select', '0,1', '', '1', '1');
 INSERT INTO `ecs_shop_config` VALUES ('1001', '2', 'takegoods_send_sms', 'select', '0,1', '', '1', '1');
 INSERT INTO `ecs_shop_config` VALUES ('1002', '2', 'takegoods_check_money', 'select', '0,1', '', '0', '1');

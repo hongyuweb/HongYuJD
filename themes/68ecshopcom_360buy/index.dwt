@@ -3,10 +3,10 @@
 <head>
 <meta property="qc:admins" content="377512662466053307063757" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="renderer" content="webkit" />
 <meta name="Keywords" content="{$keywords}" />
 <meta name="Description" content="{$description}" />
-<meta name="renderer" content="webkit" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>{$page_title}</title>
 <!-- TemplateEndEditable -->
@@ -21,6 +21,13 @@
 <script type="text/javascript" src="themes/68ecshopcom_360buy/js/jquery-lazyload.js"></script>
 <script type="text/javascript" src="themes/68ecshopcom_360buy/js/jqueryAll.index.min.js"></script>
 <script type="text/javascript" src="themes/68ecshopcom_360buy/js/jump.js"></script>
+<script language="javascript">
+    /*屏蔽所有的js错误*/
+    function killerrors() {
+        return true;
+    }
+    window.onerror = killerrors;
+</script>
 <script type="text/javascript">
 $(function(){
 	 $(".brand-wall-content img").each(function(k,img){
