@@ -19,7 +19,7 @@ if (!defined('IN_ECS'))
 }
 
 define('APPNAME', 'HongYuJD');
-define('VERSION', 'v4_2');
+define('VERSION', 'v7_2');
 define('RELEASE', '20151206');
 define('PRODUCTNAME', 'xjd_dan');
 

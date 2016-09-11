@@ -43,7 +43,7 @@ if(!is_writable("$files") and !is_writable("$filem")){
                     $config_str .= '$db_user   = "'.$_POST['db_user'].'";';
                     $config_str .= "\n\n".'// database password'."\n";
                     $config_str .= '$db_pass   = "'.$_POST['db_pass'].'";';
-                    $config_str .= "\n\n".'// HongYuJD-V6.5 bbs.hongyuvip.com'."\n";
+                    $config_str .= "\n\n".'// HongYuJD-V7.2 bbs.hongyuvip.com'."\n";
                     $config_str .= '$prefix    = "ecs_";';
                     $config_str .= "\n\n";
                     $config_str .= '$timezone    = "PRC";';
@@ -86,7 +86,7 @@ if(!is_writable("$files") and !is_writable("$filem")){
                     $config_mobile .= '$db_user   = "'.$_POST['db_user'].'";';
                     $config_mobile .= "\n\n".'// database password'."\n";
                     $config_mobile .= '$db_pass   = "'.$_POST['db_pass'].'";';
-                    $config_mobile .= "\n\n".'// HongYuJD-V6.5 bbs.hongyuvip.com'."\n";
+                    $config_mobile .= "\n\n".'// HongYuJD-V7.2 bbs.hongyuvip.com'."\n";
                     $config_mobile .= '$prefix    = "ecs_";';
                     $config_mobile .= "\n\n";
                     $config_mobile .= '$timezone    = "PRC";';
