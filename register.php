@@ -134,7 +134,7 @@ function action_send_email_code ()
 	}
 }
 
-/* 发送注册邮箱验证码到邮箱 */
+/* 发送注册手机验证码到邮箱 */
 function action_send_mobile_code ()
 {
 	
